@@ -48,7 +48,8 @@ The paper proposes a **hierarchical deep temporal model** based on **LSTM networ
 #### Group-level Temporal Modeling
 - Person-level representations are aggregated using pooling
 - The aggregated representation is used to infer the group activity
-
+  
+![idea](imgs/idea.png)
 ---
 ## Model Architecture
 ---
