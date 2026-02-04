@@ -24,6 +24,31 @@ The implementation aims to
 
 ---
 ## Paper Overview
+
+### 1- Problem
+
+Group Activity Recognition aims to identify the **collective activity** performed by a group of people in a video scene, rather than recognizing individual actions in isolation.
+
+This task is challenging because:
+
+- Group activities depend on **interactions between individuals**
+- **Temporal dynamics** are critical at both individual and group levels
+- Frame-level or holistic image classification fails to capture these relationships
+
+
+### 2- Key Idea
+
+The paper proposes a **hierarchical deep temporal model** based on **LSTM networks** that models activity at two levels:
+
+#### Person-level Temporal Modeling
+- Each person is processed independently
+- CNN features are extracted from person bounding boxes
+- An LSTM captures the temporal evolution of each individual’s action
+
+#### Group-level Temporal Modeling
+- Person-level representations are aggregated using pooling
+- The aggregated representation is used to infer the group activity
+
 ---
 ## Model Architecture
 ---
