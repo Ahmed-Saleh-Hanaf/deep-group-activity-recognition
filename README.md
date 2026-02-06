@@ -1,57 +1,51 @@
-
 # Hierarchical Deep Temporal Model for Group Activity Recognition
 ## A PyTorch Implementation of the CVPR 2016 Paper: [*A Hierarchical Deep Temporal Model for Group Activity Recognition*](http://www.cs.sfu.ca/~mori/research/papers/ibrahim-cvpr16.pdf) *Written by Mostafa S. Ibrahim, Srikanth Muralidharan, Zhiwei Deng, Arash Vahdat, and Greg Mori* 
 
 ## Table of Contents
 - [Abstract](#abstract)
 - [Paper Overview](#paper-overview)
-- [Model Architecture](#model-architecture)
 - [Dataset](#dataset-overview)
+- [Model Architecture](#model-architecture)
 - [Experiments](#experiments)
 - [Results and Comparison with the Paper](#results-and-comparison-with-the-paper)
 - [Key Differences from the Original Paper](#key-differences-from-the-original-paper)
-- [Installation](#installation)
-- [Project Structure](#project-structure)
 - [Usage and Demo](#usage-and-demo)
-- [Poster](#poster)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
 
 ---
 ## Abstract
-
-This repository provides a PyTorch reimplementation of the hierarchical deep temporal model proposed in CVPR 2016 for group activity recognition.
-The model captures temporal dynamics at both the individual-person level and the group level using a two-stage LSTM architecture.
-The implementation aims to 
+This repository provides a PyTorch reimplementation of the hierarchical deep temporal model introduced at CVPR 2016 for group activity recognition. The model captures temporal dynamics at both the individual and group levels using a two-stage LSTM architecture. The implementation aims to enhances the baseline by replacing AlexNet with the more powerful ResNet50 and modernizes the implementation by moving from Caffe to PyTorch. These updates lead to improved accuracy and result in a more flexible and extensible codebase that supports ongoing research in group activity recognition.
 
 ---
 ## Paper Overview
+### Problem
 
-### 1- Problem
+- Group Activity Recognition aims to identify the **collective activity** performed by a group of people in a video scene, rather than recognizing individual actions in isolation.
 
-Group Activity Recognition aims to identify the **collective activity** performed by a group of people in a video scene, rather than recognizing individual actions in isolation.
+  This task is challenging because:
+  - Group activities depend on **interactions between individuals**
+  - **Temporal dynamics** are critical at both individual and group levels
 
-This task is challenging because:
+### Key Idea
 
-- Group activities depend on **interactions between individuals**
-- **Temporal dynamics** are critical at both individual and group levels
-- Frame-level or holistic image classification fails to capture these relationships
-
-
-### 2- Key Idea
-
-The paper proposes a **hierarchical deep temporal model** based on **LSTM networks** that models activity at two levels:
-
-#### Person-level Temporal Modeling
-- Each person is processed independently
-- CNN features are extracted from person bounding boxes
-- An LSTM captures the temporal evolution of each individual’s action
-
-#### Group-level Temporal Modeling
-- Person-level representations are aggregated using pooling
-- The aggregated representation is used to infer the group activity
+- The paper proposes a **hierarchical deep temporal model** based on **LSTM networks** that models activity at two levels:
   
-![idea](imgs/idea.png)
----
-## Model Architecture
+  #### Person-level Temporal Modeling
+  - Each person is processed independently
+  - CNN features are extracted from person bounding boxes
+  - An LSTM captures the temporal evolution of each individual’s action
+  
+  #### Group-level Temporal Modeling
+  - Person-level representations are aggregated using pooling
+  - The aggregated representation is used to infer the group activity
+    
+<p align="center">
+  <img src="imgs/idea.png" alt="sample" style="width:100%; height:auto;" />
+</p>
+
+**Figure 1:** The key idea of the paper
+
 ---
 ## Dataset Overview
 
@@ -126,16 +120,17 @@ The dataset utilized in this paper is sourced from publicly available YouTube vo
 </table>
 
 ---
+## Model Architecture
+---
 ## Experiments
 ---
 ## Results and Comparison with the Paper
 ---
 ## Key Differences from the Original Paper
 ---
-## Installation
+## Usage and Demo
 ---
 ## Project Structure
 ---
-## Usage and Demo
----
-## Poster
+## Installation
+
