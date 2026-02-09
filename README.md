@@ -31,12 +31,12 @@ This repository provides a PyTorch reimplementation of the hierarchical deep tem
 
 - The paper proposes a **hierarchical deep temporal model** based on **LSTM networks** that models activity at two levels:
   
-  #### Person-level Temporal Modeling
+  #### 1️⃣ Person-level Temporal Modeling
   - Each person is processed independently
   - CNN features are extracted from person bounding boxes
   - An LSTM captures the temporal evolution of each individual’s action
   
-  #### Group-level Temporal Modeling
+  #### 2️⃣ Group-level Temporal Modeling
   - Person-level representations are aggregated using pooling
   - The aggregated representation is used to infer the group activity
     
@@ -121,6 +121,23 @@ The dataset utilized in this paper is sourced from publicly available YouTube vo
 
 ---
 ## Model Architecture
+<p align="center">
+  <img src="imgs/model_arch.png" alt="sample" style="width:100%; height:auto;" />
+</p>
+
+**Figure 4:** High-level overview of group activity recognition via a hierarchical model, the model has **two levels**: person-level and group-level.
+
+  #### 1️⃣ Person-Level Temporal Modeling
+  - **Input:** Crops of individual people from video frames.
+  - **Feature Extraction:** CNN backbone (e.g., ResNet-50) extracts spatial features.
+  - **Temporal Modeling:** Person-level LSTM captures temporal evolution of each person.
+  - **Output:** Latent representation of each person (Person Dynamic in figure).
+
+  #### 2️⃣ Group-Level Temporal Modeling
+  - **Aggregation:** Person-level representations are pooled across all individuals in a frame.
+  - **Temporal Modeling:** Group-level LSTM captures group dynamics over time.
+  - **Output:** Predicted group activity (Group Dynamic in figure).
+
 ---
 ## Experiments
 ---
