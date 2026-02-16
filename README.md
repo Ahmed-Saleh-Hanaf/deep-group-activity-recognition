@@ -20,16 +20,14 @@ This repository provides a PyTorch reimplementation of the hierarchical deep tem
 ---
 ## Paper Overview
 ### Problem
-
-- Group Activity Recognition aims to identify the **collective activity** performed by a group of people in a video scene, rather than recognizing individual actions in isolation.
+Group Activity Recognition aims to identify the **collective activity** performed by a group of people in a video scene, rather than recognizing individual actions in isolation.
 
   This task is challenging because:
   - Group activities depend on **interactions between individuals**
   - **Temporal dynamics** are critical at both individual and group levels
 
 ### Key Idea
-
-- The paper proposes a **hierarchical deep temporal model** based on **LSTM networks** that models activity at two levels:
+The paper proposes a **hierarchical deep temporal model** based on **LSTM networks** that models activity at two levels:
   
   #### 1️⃣ Person-level Temporal Modeling
   - Each person is processed independently
