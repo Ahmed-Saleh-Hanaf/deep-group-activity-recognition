@@ -1,0 +1,36 @@
+DATA:
+  ROOT_DIR: r"C:\Users\engah\Downloads\videos_sample (1)\videos_sample"
+  MODE: "image"
+  TRAIN_VIDS: [7]
+  VAL_VIDS:   []
+  TEST_VIDS:  []
+
+MODEL:
+  BACKBONE: "resnet50"
+  CLIP_LEN: 40
+
+TRAIN:
+  BATCH_SIZE: 64
+  SHUFFLE: true
+  NUM_WORKERS: 4
+  DROP_LAST: true
+  PIN_MEMORY: true
+  PERSISTENT_WORKERS: true
+  LR: 0.0001
+  EPOCHS: 100
+
+TEST:
+  BATCH_SIZE: 32
+  SHUFFLE: false
+  NUM_WORKERS: 4
+  DROP_LAST: false
+  PIN_MEMORY: true
+  PERSISTENT_WORKERS: true
+
+VAL:
+  BATCH_SIZE: 32
+  SHUFFLE: false
+  NUM_WORKERS: 4
+  DROP_LAST: false
+  PIN_MEMORY: true
+  PERSISTENT_WORKERS: true
