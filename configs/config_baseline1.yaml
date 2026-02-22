@@ -4,10 +4,12 @@ DATA:
   TRAIN_VIDS: [7]
   VAL_VIDS:   []
   TEST_VIDS:  []
+  TRANSFORM: 
 
 MODEL:
-  BACKBONE: "resnet50"
-  CLIP_LEN: 40
+  NAME: "imageclassification"
+  PRETRAINED: true
+  NUM_CLASSES: 8
 
 TRAIN:
   BATCH_SIZE: 64
